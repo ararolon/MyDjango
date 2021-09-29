@@ -20,4 +20,4 @@ def home(request):
     if request.user.is_authenticated:
         return render(request, 'SSO/home.html', context=None)
     else:
-       return redirect('/accounts/google/login/?process=login')
+       return redirect('login')
