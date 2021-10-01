@@ -18,6 +18,6 @@ def logout(request):
 
 def home(request):
     if request.user.is_authenticated:
-        return render(request, 'SSO/home.html', context=None)
+        return render(request, 'SSO/Home.html', context=None)
     else:
        return redirect('login')

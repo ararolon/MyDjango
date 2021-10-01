@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     #app del proyecto
     'SSO',
+    'Usuarios',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

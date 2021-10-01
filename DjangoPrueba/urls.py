@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), #path del sso de google
     path('', include('SSO.urls')),
+    path('usuarios/',include('Usuarios.urls')),
 ]
