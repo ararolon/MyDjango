@@ -1,7 +1,16 @@
+from django.contrib.auth.models import User
 from django.shortcuts import render
 
 # Create your views here.
 
 
-def user_home(request):
-    return render(request,'Usuarios/base.html',context=None)
+def eliminar_usuario(request):
+    """
+    Vista para eliminar usuarios del sistema
+    :param request: Httprequest object
+    :return: HttpResponse
+    """
+    #se obtienen todos los usuarios del sistema
+    usuarios= User.objects.all()
+    contexto = {'usuarios':usuarios}
+    return render(request,"Usuarios/eliminar.html",context=contexto)

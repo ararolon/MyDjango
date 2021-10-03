@@ -9,6 +9,6 @@ from Usuarios import views
 """
 
 urlpatterns = [
-    path('', views.user_home, name='userhome'),
+    path('', views.eliminar_usuario, name='eliminaruser'),
 
 ]

@@ -12,7 +12,8 @@ from django.views.generic import TemplateView
 from SSO import views
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('',views.configurariones_iniciales,name='confinicial'),
+    path('home/', views.home, name='home'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
 ]
