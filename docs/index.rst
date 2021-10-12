@@ -9,7 +9,11 @@ Welcome to Gestor De Proyecto's documentation!
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
-   source/SSO
+
+   modules
+   SSO
+   Usuarios
+
 
 Indices and tables
 ==================
