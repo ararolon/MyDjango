@@ -1,0 +1,48 @@
+{% extends 'Usuarios/base_admin.html' %}
+
+{# se carga head #}
+{% block title %}
+     Usuario Detalles
+{% endblock %}
+
+{# body #}
+{% block content %}
+     <div class="row">
+         <table class="table caption-top" >
+             <caption>Datos del usuario : {{usuario.id}}</caption>
+             <thead>
+             </thead>
+            <tbody>
+                 <tr>
+                    <td scope="row"> ID: {{ usuario.id}}</td>
+                 </tr>
+                 <tr>
+                    <td>Username: {{ usuario.username }}</td>
+                 </tr>
+                 <tr>
+                    <td>Nombre: {{ usuario.first_name }}</td>
+                 </tr>
+                 <tr>
+                     <td>Apellido: {{ usuario.last_name }}</td>
+                 </tr>
+                 <tr>
+                    <td>Email: {{ usuario.email }}</td>
+                 </tr>
+                 <tr>
+                     <td>Primera conexion: {{ usuario.date_joined }}</td>
+                 </tr>
+                 <tr>
+                     <td>Ultima conexion: {{ usuario.last_login }}</td>
+                 </tr>
+            </tbody>
+         </table>
+     </div>
+{% endblock %}
+
+
+
+
+
+
+
+

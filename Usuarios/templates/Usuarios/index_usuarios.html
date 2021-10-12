@@ -1,0 +1,55 @@
+{% extends 'Usuarios/base_admin.html' %}
+
+{# se carga head #}
+{% block title %}
+     Usuarios
+{% endblock %}
+
+{# body #}
+{% block content %}
+
+    <div>
+      <div>
+          <h2> Administracion de Usuarios </h2>
+      </div>
+           <div>
+               <table class="table">
+                   <thead class="table-light">
+                       <tr>
+                            <th>User</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Email</th>
+                           <th>Fecha de Alta</th>
+                           <th>Mas detalles</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                        {% for u in usuarios %}
+                            <tr>
+                                <td>{{ u.username }}</td>
+                                <td>{{ u.first_name }}</td>
+                                <td>{{ u.last_name }}</td>
+                                <td>{{ u.email }}</td>
+                                <td>{{ u.date_joined }}</td>
+                                <td>
+                                     <div class="fa-align-center">
+                                         <a  href="{% url 'verdetalle' u.id %}" class="btn btn-primary"  role="button">Ver Detalles</a>
+                                     </div>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                   </tbody>
+               </table>
+           </div>
+    </div>
+
+{% endblock %}
+
+
+
+
+
+
+
+
