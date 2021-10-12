@@ -9,6 +9,8 @@ from Usuarios import views
 """
 
 urlpatterns = [
-    path('', views.eliminar_usuario, name='eliminaruser'),
-
+    path('',views.index_usuarios,name='index_usuario'),
+    path('VerUsuario/<int:id>',views.ver_detalles,name='verdetalle'),
+    path('Eliminar_usuario/<int:id>',views.eliminar_usuario, name='eliminaruser'),
+    path('Index_eliminar',views.index_eliminarusuario,name='indexeliminar'),
 ]
