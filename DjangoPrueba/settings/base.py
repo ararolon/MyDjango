@@ -32,7 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.messages', #para los mensajes
     'django.contrib.staticfiles',
     #sso de google
     # The following apps are required:
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'SSO',
     'Usuarios',
     'RolesdeProyecto',
+    'RolesdeSistema',
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -49,6 +51,11 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
 
 ]
+
+#configuracion para poder usar el crispy forms con bootstrap4
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -73,7 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages', #para los mensajes
             ],
         },
     },
