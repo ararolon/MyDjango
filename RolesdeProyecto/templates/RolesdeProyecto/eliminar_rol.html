@@ -1,0 +1,28 @@
+{% extends 'Usuarios/base_admin.html' %}
+{% load crispy_forms_tags %}
+{# se carga head #}
+{% block title %}
+     Eliminar rol de proyecto
+{% endblock %}
+
+{# body #}
+{% block content %}
+
+   <div class="card card-body">
+      <div class="align-center">
+        <br/>
+         ¿Esta seguro que desea eliminar el rol: {{ rol.nombre }}?
+         <br/>
+      </div>
+      <div class="">
+           <form action="{% url 'eliminar_rol' rol.id %}" method="POST">
+                   {% csrf_token %}
+               <div class="fa-align-justify">
+                   <input type="submit" value="Confirmar" class="btn btn-success">
+                   &nbsp;
+                   <a href="{% url 'index_rol_proyecto' %}" class="btn btn-danger">Cancelar</a>
+               </div>
+           </form>
+      </div>
+   </div>
+{% endblock %}

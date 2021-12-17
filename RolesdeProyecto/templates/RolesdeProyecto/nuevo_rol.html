@@ -1,0 +1,28 @@
+{% extends 'Usuarios/base_admin.html' %}
+{% load crispy_forms_tags %}
+{# se carga head #}
+{% block title %}
+     Crear nuevo rol de proyecto
+{% endblock %}
+
+{# body #}
+{% block content %}
+
+   <div class="card card-body">
+       <br/>
+       <form action="" method="POST">
+               {% csrf_token %}
+           <div class="d-flex justify-content-end">
+               <input type="reset" value="Borrar Campos" class="btn btn-warning">
+           </div>
+               {{ formulario | crispy }}
+           <br/>
+           <div class="d-flex justify-content-end">
+               <input type="submit" value="Aceptar" class="btn btn-success">
+               &nbsp;
+               <a href="{% url 'index_rol_proyecto' %}" class="btn btn-danger">Cancelar</a>
+           </div>
+       </form>
+   </div>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{% extends 'Usuarios/base_admin.html' %}
+{% load crispy_forms_tags %}
+{# se carga head #}
+{% block title %}
+     Detalles de Rol
+{% endblock %}
+
+{# body #}
+{% block content %}
+
+
+
+      <div class="col-12">
+          <h3>Detalles de rol con id = {{ rol.id }}</h3>
+          <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                  <strong>Nombre:</strong>
+                  <br/>
+                  {{ rol.nombre }}
+              </li>
+              <li class="list-group-item">
+                  <strong>Descripcion:</strong>
+                  <br/>
+                  {{ rol.descripcion }}
+              </li>
+              <li class="list-group-item">
+                  <strong>Permisos:</strong>
+                  <br/>
+                  {% for r in rol.get_permisos %}
+                      {{ r.name }}
+                      <br/>
+                  {% endfor %}
+              </li>
+          </ul>
+      </div>
+
+{% endblock %}
+

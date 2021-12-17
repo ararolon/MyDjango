@@ -1,0 +1,45 @@
+{% extends 'Usuarios/base_admin.html' %}
+{% load crispy_forms_tags %}
+{# se carga head #}
+{% block title %}
+     Listar roles de proyectos
+{% endblock %}
+
+{# body #}
+{% block content %}
+
+    <div class="row">
+      <h3 class="align-center"> Lista de roles de proyecto en el sistema</h3>
+      <br/>
+      <div class="col-12">
+
+          <table class="table">
+
+              <thead class="thead-dark">
+                 <tr>
+                     <th class="col">
+                         Rol
+                     </th>
+                     <th class="col">
+                         Opciones
+                     </th>
+                 </tr>
+              </thead>
+              <tbody>
+                 {% for r in roles %}
+                     <tr>
+                        <td>{{ r.nombre }}</td>
+                        <td><a href="{% url 'ver_detalles' r.id %}" class="btn btn-info">Info</a></td>
+                         <td><a href="{% url 'editar_rol' r.id %}" class="btn btn-warning">Modificar</a></td>
+                         <td><a href="{% url 'eliminar_rol' r.id %}" class="btn btn-danger">ELiminar</a></td>
+                    <tr/>
+                 {% endfor %}
+
+              </tbody>
+        </table>
+      </div>
+
+    </div>
+
+{% endblock %}
+
