@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-SITE_ID = 2
+SITE_ID = 3 #importante ! si este se cambia, se jode el login, cuidado que el numero depende de la cantidad de SITES
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL = '/'
 # Provider specific settings

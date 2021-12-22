@@ -20,12 +20,12 @@
                   </ul>
                </li>
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="{% url 'index_rol_sistema' %}" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Roles de Sistema
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <li><a class="dropdown-item" href="#">Crear rol</a></li>
-                      <li><a class="dropdown-item" href="#">Listar roles</a></li>
+                    <li><a class="dropdown-item" href="{% url 'nuevo_rol' %}">Crear rol</a></li>
+                      <li><a class="dropdown-item" href="{% url 'listar_roles' %}">Listar roles</a></li>
                   </ul>
                 </li>
                 <li class="nav-item dropdown">

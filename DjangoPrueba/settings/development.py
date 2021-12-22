@@ -19,7 +19,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Database
+# Databasemanage.py remove_stale_contenttypes
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
