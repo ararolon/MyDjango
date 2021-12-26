@@ -26,7 +26,7 @@ def crear_nuevo_rol(request):
         formulario = RolesDeSistemaForms(request.POST)
         if formulario.is_valid():
             formulario.save()
-            return redirect('index_rol_proyecto')
+            return redirect('index_rol_sistema')
 
     return render(request, 'RolesdeSistema/nuevo_rol.html', {'formulario': formulario})
 

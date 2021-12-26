@@ -29,9 +29,9 @@
                  {% for r in roles %}
                      <tr>
                         <td>{{ r.nombre }}</td>
-                        <td><a href="{% url 'ver_detalles' r.id %}" class="btn btn-info">Info</a></td>
-                         <td><a href="{% url 'editar_rol' r.id %}" class="btn btn-warning">Modificar</a></td>
-                         <td><a href="{% url 'eliminar_rol' r.id %}" class="btn btn-danger">ELiminar</a></td>
+                        <td><a href="{% url 'ver_detalles_proyecto' r.id %}" class="btn btn-info">Info</a></td>
+                         <td><a href="{% url 'editar_rol_proyecto' r.id %}" class="btn btn-warning">Modificar</a></td>
+                         <td><a href="{% url 'eliminar_rol_proyecto' r.id %}" class="btn btn-danger">ELiminar</a></td>
                     <tr/>
                  {% endfor %}
 

@@ -15,12 +15,12 @@
          <br/>
       </div>
       <div class="">
-           <form action="{% url 'eliminar_rol' rol.id %}" method="POST">
+           <form action="{% url 'eliminar_rol_proyecto' rol.id %}" method="POST">
                    {% csrf_token %}
                <div class="fa-align-justify">
                    <input type="submit" value="Confirmar" class="btn btn-success">
                    &nbsp;
-                   <a href="{% url 'listar_roles' %}" class="btn btn-danger">Cancelar</a>
+                   <a href="{% url 'listar_roles_proyecto' %}" class="btn btn-danger">Cancelar</a>
                </div>
            </form>
       </div>

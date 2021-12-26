@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 
 # Create your views here.
-import RolesdeProyecto
+
 from RolesdeProyecto.forms import RolesProyectoForms
 from RolesdeProyecto.models import RolesDeProyecto
 
@@ -65,7 +65,7 @@ def eliminar_rol(request,pk):
         try:
             rol.delete()
             #ideal usar messages
-            return redirect('listar_roles')
+            return redirect('listar_roles_proyecto')
         except Exception:
             #usar django messages framework
             print("No se puede eliminar, el rol esta en uso")
@@ -81,6 +81,8 @@ def listar_roles(request):
     :return: HttpResponse
     """
     rol = RolesDeProyecto.objects.all()
+    if not rol:
+        return render(request,"RolesdeProyecto/NoexisteRol.html")
     return render(request,"RolesdeProyecto/Listar_roles_proyecto.html",{'roles':rol})
 
 

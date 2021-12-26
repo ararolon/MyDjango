@@ -49,7 +49,7 @@ def home(request):
 
 
 
-def configurariones_iniciales(request):
+def configuraciones_iniciales(request):
 
    """
     Se realizan las configuraciones iniciales para la identificacion de usuarios.
