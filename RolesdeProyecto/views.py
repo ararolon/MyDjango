@@ -1,11 +1,15 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
 
 from RolesdeProyecto.forms import RolesProyectoForms
 from RolesdeProyecto.models import RolesDeProyecto
+from SSO.decorador import vista_admin
 
 
+@login_required(login_url='login')
+@vista_admin
 def vista_principal(request):
     """
     vista principal de roles de proyecto
@@ -14,7 +18,8 @@ def vista_principal(request):
     """
 
     return render(request,"RolesdeProyecto/index_rol_proyecto.html")
-
+@login_required(login_url='login')
+@vista_admin
 def crear_nuevo_rol(request):
     """
     vista que permite crear un nuevo rol de proyecto en el sistema
@@ -31,6 +36,9 @@ def crear_nuevo_rol(request):
 
     return render(request, 'RolesdeProyecto/nuevo_rol.html', {'formulario': formulario})
 
+
+@login_required(login_url='login')
+@vista_admin
 def modificar_rol(request,pk):
     """
     Vista que permite la modificacion de un rol de proyecto en el sistema
@@ -50,6 +58,8 @@ def modificar_rol(request,pk):
     context = {'formulario': form}
     return render(request, 'RolesdeProyecto/Modificar_rol.html', context)
 
+@login_required(login_url='login')
+@vista_admin
 def eliminar_rol(request,pk):
     """
     Vista para eliminar un rol de proyecto del sistema
@@ -73,7 +83,8 @@ def eliminar_rol(request,pk):
 
     return render(request, 'RolesdeProyecto/eliminar_rol.html', {'rol':rol})
 
-
+@login_required(login_url='login')
+@vista_admin
 def listar_roles(request):
     """
     vista para listar todos los roles de proyecto en el sistema
@@ -86,7 +97,8 @@ def listar_roles(request):
     return render(request,"RolesdeProyecto/Listar_roles_proyecto.html",{'roles':rol})
 
 
-
+@login_required(login_url='login')
+@vista_admin
 def detalles_rol(request,pk):
     """
     Vista para ver todos los detalles de un rol
